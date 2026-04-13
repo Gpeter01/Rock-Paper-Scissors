@@ -19,4 +19,24 @@ function getComputerChoice() {
     if (computerProb >= 66 && computerProb < 100) {
         computerChoice = choiceThree;
     }
+} function getHumanChoice() {
+    let question;
+    if (i == 5) {
+        question = prompt("Rock, paper or scissors? FINAL ROUND!!");
+    } else {
+        question = prompt(`Rock, paper or scissors? Round ${i}`);
+    }
+    let questionTrim = question.trimEnd();
+    let questionLowerCase = questionTrim.toLowerCase();
+
+    if (questionLowerCase == "rock") {
+        userChoice = choiceOne;
+    } else if (questionLowerCase == "paper") {
+        userChoice = choiceTwo;
+    } else if (questionLowerCase == "scissors") {
+        userChoice = choiceThree;
+    } else {
+        alert("Wrong Input");
+        return;
+    }
 }
