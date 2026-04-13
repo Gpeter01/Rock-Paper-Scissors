@@ -5,3 +5,4 @@ let choiceThree = "scissors";
 let computerScore = 0;
 let humanScore = 0;
 let drawGame = 0;
+let userChoice;
