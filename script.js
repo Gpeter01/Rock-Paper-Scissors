@@ -7,6 +7,7 @@ let humanScore = 0;
 let drawGame = 0;
 let userChoice;
 let computerChoice;
+let i;
 
 function getComputerChoice() {
     if (computerProb < 33) {
