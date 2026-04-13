@@ -91,7 +91,7 @@ function playRound(a, b) {
 
             You lose! Rock beats Scissors`);
     }
-    if (userChoice == choiceTwo && b == choiceThree) {
+    if (a == choiceTwo && b == choiceThree) {
         computerScore++;
         console.log(`Round ${i} / 5 
             Your Choice: ${a}
