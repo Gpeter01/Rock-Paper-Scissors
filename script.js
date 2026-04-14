@@ -1,7 +1,7 @@
 let computerProb;
 let choiceOne = "Rock";
 let choiceTwo = "Paper";
-let choiceThree = "scissors";
+let choiceThree = "Scissors";
 let computerScore = 0;
 let humanScore = 0;
 let drawGame = 0;
