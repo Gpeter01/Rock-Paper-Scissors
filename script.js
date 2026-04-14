@@ -132,6 +132,7 @@ function playRound(a, b) {
         console.log("");
         console.log("");
     }
+    userChoice = "";
 }
 function playGame() {
     for (i = 1; i < 6; i++) {
@@ -172,3 +173,4 @@ function playGame() {
         console.log("Haha, you lost");
     }
 }
+playGame();
