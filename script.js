@@ -57,12 +57,12 @@ function playRound(a, b) {
         humanScore++;
         console.log(`Round ${i} / 5 
             Your Choice: ${userChoice}
-            Computer;s Choice: ${computerChoice}
+            Computer's Choice: ${computerChoice}
 
             You win! Paper beats Rock`);
         alert(`Round ${i} / 5 
             Your Choice: ${userChoice}
-            Computer;s Choice: ${computerChoice}
+            Computer's Choice: ${computerChoice}
 
             You win! Paper beats Rock`);
     }
