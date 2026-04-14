@@ -121,11 +121,9 @@ function playRound(a, b) {
             Your Choice: ${userChoice}
             Computer's Choice: ${computerChoice}
             
-            
             Draw!!`);
         alert(`Your Choice: ${userChoice}
             Computer's Choice: ${computerChoice}
-            
             
             Draw!!`);
     }
