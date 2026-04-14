@@ -1,11 +1,11 @@
-# Rock-Paper-Scissors-
-# ✊ Rock Paper Scissors Game
+# Rock-Paper-Scissors
+# Rock Paper Scissors Game
 
 A simple Rock Paper Scissors game built as a beginner project to practice programming fundamentals, logic, and user interaction.
 
 ---
 
-## 📖 About the Game
+## About the Game
 
 Rock Paper Scissors is a classic hand game played between two players. Each player simultaneously chooses one of three options:
 
@@ -17,7 +17,7 @@ The game is widely used as a quick decision-making tool and is known for its sim
 
 ---
 
-## 🎮 How to Play
+## How to Play
 
 1. Two players choose one of the three options at the same time.
 2. The choices are revealed simultaneously.
@@ -54,7 +54,7 @@ The game typically uses:
 
 ---
 
-## 🧠 Concept Behind the Game
+## Concept Behind the Game
 
 Rock Paper Scissors is a **zero-sum game**, meaning one player’s win is another player’s loss.  [oai_citation:0‡Wikipedia](https://en.wikipedia.org/wiki/Rock_paper_scissors?utm_source=chatgpt.com)  
 
@@ -74,18 +74,18 @@ It’s also used in:
 
 While building this project, I learned:
 
-- ✅ How to take user input  
-- ✅ How to generate random values  
-- ✅ How to use conditional logic to control outcomes  
-- ✅ How to structure a simple program  
-- ✅ How to handle edge cases like draws  
-- ✅ The importance of clean and readable code  
+- How to take user input  
+- How to generate random values  
+- How to use conditional logic to control outcomes  
+- How to structure a simple program  
+- How to handle edge cases like draws  
+- The importance of clean and readable code  
 
 This project helped me understand how small pieces of logic come together to create a complete, interactive program.
 
 ---
 
-## 🚀 Future Improvements
+## Future Improvements
 
 Some ideas to improve this project:
 
@@ -93,8 +93,6 @@ Some ideas to improve this project:
 - Keep score across multiple rounds
 - Add sound effects or animations
 - Implement multiplayer mode
-
----
 
 ## 🏁 Conclusion
 
