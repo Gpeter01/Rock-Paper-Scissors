@@ -41,94 +41,95 @@ function getComputerChoice() {
     }
 }
 function playRound(a, b) {
-    if (a == choiceOne && b == choiceTwo) {
+    if (userChoice == choiceOne && computerChoice == choiceTwo) {
         computerScore++;
         console.log(`Round ${i} / 5 
-            Your Choice: ${a}
-            Computer's Choice: ${b}
+            Your Choice: ${userChoice}
+            Computer's Choice: ${computerChoice}
             
             You lose! Paper beats Rock`);
         alert(`Round ${i} / 5 
-            Your Choice: ${a}
-            Computer's Choice: ${b}
+            Your Choice: ${userChoice}
+            Computer's Choice: ${computerChoice}
             
             You lose! Paper beats Rock`);
-    } else if (a == choiceTwo && b == choiceOne) {
+    } else if (userChoice == choiceTwo && computerChoice == choiceOne) {
         humanScore++;
         console.log(`Round ${i} / 5 
-            Your Choice: ${a}
-            Computer;s Choice: ${b}
+            Your Choice: ${userChoice}
+            Computer;s Choice: ${computerChoice}
 
             You win! Paper beats Rock`);
         alert(`Round ${i} / 5 
-            Your Choice: ${a}
-            Computer;s Choice: ${b}
+            Your Choice: ${userChoice}
+            Computer;s Choice: ${computerChoice}
 
             You win! Paper beats Rock`);
     }
-    if (a == choiceOne && b == choiceThree) {
+    if (userChoice == choiceOne && computerChoice == choiceThree) {
         humanScore++;
         console.log(`Round ${i} / 5 
-            Your Choice: ${a}
-            Computer's Choice: ${b}
+            Your Choice: ${userChoice}
+            Computer's Choice: ${computerChoice}
 
             You win! Rock beats Scissors`);
         alert(`Round ${i} / 5 
-            Your Choice: ${a}
-            Computer's Choice: ${b}
+            Your Choice: ${userChoice}
+            Computer's Choice: ${computerChoice}
 
             You win! Rock beats Scissors`);
-    } else if (a == choiceThree && b == choiceOne) {
+    } else if (userChoice == choiceThree && computerChoice == choiceOne) {
         computerScore++;
         console.log(`Round ${i} / 5 
-            Your Choice: ${a}
-            Computer's Choice: ${b}
+            Your Choice: ${userChoice}
+            Computer's Choice: ${computerChoice}
 
             You lose! Rock beats Scissors`);
         alert(`Round ${i} / 5 
-            Your Choice: ${a}
-            Computer's Choice: ${b}
+            Your Choice: ${userChoice}
+            Computer's Choice: ${computerChoice}
 
             You lose! Rock beats Scissors`);
     }
-    if (a == choiceTwo && b == choiceThree) {
+    if (userChoice == choiceTwo && b == choiceThree) {
         computerScore++;
         console.log(`Round ${i} / 5 
-            Your Choice: ${a}
-            Computer's Choice: ${b}
+            Your Choice: ${userChoice}
+            Computer's Choice: ${computerChoice}
 
             You lose! Scissors beats Paper`);
         alert(`Round ${i} / 5 
-            Your Choice: ${a}
-            Computer's Choice: ${b}
+            Your Choice: ${userChoice}
+            Computer's Choice: ${computerChoice}
 
             You lose! Scissors beats Paper`);
-    } else if (a == choiceThree && b == choiceTwo) {
+    } else if (userChoice == choiceThree && computerChoice == choiceTwo) {
         humanScore++;
         console.log(`Round ${i} / 5 
-            Your Choice: ${a}
-            Computer's Choice: ${b}
+            Your Choice: ${userChoice}
+            Computer's Choice: ${computerChoice}
 
             You win! Scissors beats Paper`);
         alert(`Round ${i} / 5 
-            Your Choice: ${a}
-            Computer's Choice: ${b}
+            Your Choice: ${userChoice}
+            Computer's Choice: ${computerChoice}
+
             You win! Scissors beats Paper`);
-    } else if (userChoice == b) {
+    } else if (userChoice == computerChoice) {
         drawGame++;
         console.log(`Round ${i} / 5 
-            Your Choice: ${a}
-            Computer's Choice: ${b}
+            Your Choice: ${userChoice}
+            Computer's Choice: ${computerChoice}
             
             
             Draw!!`);
-        alert(`Your Choice: ${a}
-            Computer's Choice: ${b}
+        alert(`Your Choice: ${userChoice}
+            Computer's Choice: ${computerChoice}
             
             
             Draw!!`);
     }
-    if (a != undefined || null) {
+    if (userChoice != undefined || null) {
         console.log("");
         console.log("");
     }
