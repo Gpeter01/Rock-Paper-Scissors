@@ -122,7 +122,8 @@ function playRound(a, b) {
             Computer's Choice: ${computerChoice}
             
             Draw!!`);
-        alert(`Your Choice: ${userChoice}
+        alert(`Round ${i} / 5
+            Your Choice: ${userChoice}
             Computer's Choice: ${computerChoice}
             
             Draw!!`);
