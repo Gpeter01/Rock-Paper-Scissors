@@ -134,3 +134,42 @@ function playRound(a, b) {
         console.log("");
     }
 }
+function playGame() {
+    for (i = 1; i < 6; i++) {
+        computerProb = Math.floor(Math.random() * 100);
+        let a = getHumanChoice();
+        let b = getComputerChoice();
+        playRound(a, b);
+        
+    }
+    humanScore;
+    computerScore;
+    let lostRound = "rounds";
+    let winRound = "rounds";
+
+    if (computerScore == 1) {
+        lostRound= "round";
+    } 
+    if (humanScore == 1) {
+        winRound = "round";
+    }
+    if (drawGame == 1) {
+        drawGame= "one";
+    }
+    if (drawGame == 0) {
+        drawGame = "none";
+    }
+    if (humanScore == 5 && computerScore == 0) {
+        console.log("That's incredible");
+    }
+    if (humanScore == computerScore) {
+        console.log(`You lost ${computerScore} ${lostRound}, won ${humanScore} and  also drew ${drawGame}`);
+        console.log("What a clutch, it's a draw.");
+    } else if (humanScore > computerScore) {
+        console.log(`You won ${humanScore} ${winRound}, lost ${computerScore} ${lostRound} and drew ${drawGame}`);
+        console.log("Congratulations, you win!!🎉🎉");
+    } else if (humanScore < computerScore) {
+        console.log(`You lost ${computerScore} ${lostRound}, won ${humanScore} ${winRound} and drew ${drawGame}`);
+        console.log("Haha, you lost");
+    }
+}
