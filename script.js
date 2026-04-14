@@ -1,6 +1,6 @@
 let computerProb;
 let choiceOne = "Rock";
-let choiceTwo = "paper";
+let choiceTwo = "Paper";
 let choiceThree = "scissors";
 let computerScore = 0;
 let humanScore = 0;
