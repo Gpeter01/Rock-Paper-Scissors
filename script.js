@@ -10,28 +10,22 @@ function getComputerChoice() {
    let gameOptionIndex = Math.floor(Math.random() * 3);
    return gameOptions[gameOptionIndex];
 } 
-function getHumanChoice() {
-    let gameQuestion;
-    if (gameRound == 5) {
-        gameQuestion = prompt("Rock, paper or scissors? FINAL ROUND!!");
-    } else {
-        gameQuestion = prompt(`Rock, paper or scissors? Round ${gameRound}`);
-    }
-    let gameQuestionTrim = gameQuestion.trim();
-    let gameQuestionLowerCase = gameQuestionTrim.toLowerCase();
 
-    if (gameQuestionLowerCase == "rock") {
-        playerChoice = gameOptions[0];
-    } else if (gameQuestionLowerCase == "paper") {
-        playerChoice = gameOptions[1];
-    } else if (gameQuestionLowerCase == "scissors") {
-        playerChoice = gameOptions[2];
-    } else {
-        alert("Wrong Input");
-        return getHumanChoice();
-    }
-    return playerChoice;
-}
+let humanChoice;
+let clickCount = 0;
+const allOptions = document.querySelectorAll(".option");
+allOptions.forEach(option => {
+    option.addEventListener("click", event => {
+        if (clickCount == 0) {
+            humanChoice = event.target.classList[1];
+            clickCount++;
+            console.log(humanChoice);
+            return humanChoice;
+        } else {
+            return;
+        }
+    })
+})
 function playRound(playerChoiceForRound, computerChoiceForRound) {
     if (playerChoiceForRound == computerChoiceForRound) {
         drawGame++;
