@@ -8,7 +8,8 @@ let computerChoice;
 
 function getComputerChoice() {
    let gameOptionIndex = Math.floor(Math.random() * 3);
-   return gameOptions[gameOptionIndex];
+   computerChoice = gameOptions[gameOptionIndex];
+   return computerChoice;
 } 
 
 let humanChoice;
@@ -19,66 +20,45 @@ allOptions.forEach(option => {
         if (clickCount == 0) {
             humanChoice = event.target.classList[1];
             clickCount++;
-            console.log(humanChoice);
-            return humanChoice;
+            refinePlayerChoice();
+            getComputerChoice();
         } else {
             return;
         }
+        playRound(playerChoice, computerChoice);
     })
 })
-function refinePlayerChoice(choice) {
+function refinePlayerChoice() {
     for (let i = 0; i <= 2; i++ ) {
-        if (choice == gameOptions[i].toLowerCase()) {
-            return gameOptions[i];
+        if (humanChoice == gameOptions[i].toLowerCase()) {
+            playerChoice = gameOptions[i];
+            return playerChoice;
         }
     }
 }
 function playRound(playerChoiceForRound, computerChoiceForRound) {
+    let perRound = document.querySelector(".per-round");
+
     if (playerChoiceForRound == computerChoiceForRound) {
         drawGame++;
-        console.log(`Round ${gameRound} / 5 
-            Your Choice: ${playerChoiceForRound}
-            Computer's Choice: ${computerChoiceForRound}
-            
-            Draw!!`);
-        alert(`Round ${gameRound} / 5
-            Your Choice: ${playerChoiceForRound}
-            Computer's Choice: ${computerChoiceForRound}
-            
-            Draw!!`);
+        perRound.textContent = "It's a draw";
+        perRound.style.color = "white";
     }
     if ((playerChoiceForRound == gameOptions[0] && computerChoiceForRound == gameOptions[2]) ||
         (playerChoiceForRound == gameOptions[1] && computerChoiceForRound == gameOptions[0]) ||
         (playerChoiceForRound == gameOptions[2] && computerChoiceForRound == gameOptions[1])) {
         playerScore++;
-        console.log(`Round ${gameRound} / 5 
-            Your Choice: ${playerChoiceForRound}
-            Computer's Choice: ${computerChoiceForRound}
-
-            You win!! ${playerChoiceForRound} beats ${computerChoiceForRound}`);
-        alert(`Round ${gameRound} / 5 
-            Your Choice: ${playerChoiceForRound}
-            Computer's Choice: ${computerChoiceForRound}
-
-            You win!! ${playerChoiceForRound} beats ${computerChoiceForRound}`);
+        perRound.textContent = "You win!!";
+        perRound.style.color = "green";
     } else {
         if (playerChoiceForRound !== computerChoiceForRound) {
             computerScore++;
-            console.log(`Round ${gameRound} / 5
-                Your Choice: ${playerChoiceForRound}
-                Computer's Choice: ${computerChoiceForRound}
-                
-                You lose! ${computerChoiceForRound} beats ${playerChoiceForRound}`);
-            alert(`Round ${gameRound} / 5
-                Your Choice: ${playerChoiceForRound}
-                Computer's Choice: ${computerChoiceForRound}
-                
-                You lose! ${computerChoiceForRound} beats ${playerChoiceForRound}`);
+            perRound.textContent = "You lose!!";
+            perRound.style.color = "red";
         }
     }
-    console.log("");
-    console.log("");
     playerChoiceForRound = "";
+    computerChoiceForRound = "";
 }
 function playGame() {
     for (gameRound = 1; gameRound < 6; gameRound++) {
