@@ -26,6 +26,13 @@ allOptions.forEach(option => {
         }
     })
 })
+function refinePlayerChoice(choice) {
+    for (let i = 0; i <= 2; i++ ) {
+        if (choice == gameOptions[i].toLowerCase()) {
+            return gameOptions[i];
+        }
+    }
+}
 function playRound(playerChoiceForRound, computerChoiceForRound) {
     if (playerChoiceForRound == computerChoiceForRound) {
         drawGame++;
