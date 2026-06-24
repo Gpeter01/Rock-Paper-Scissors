@@ -83,3 +83,7 @@ p.main-output {
     background-color: brown;
     margin: 0 auto 2rem;
 }
+.next-round {
+    text-align: center;
+    font-size: 1.3rem;
+}

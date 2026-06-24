@@ -5,6 +5,7 @@ let playerScore = 0;
 let drawGame = 0;
 let playerChoice;
 let computerChoice;
+let numberOfRounds = 1;
 
 function getComputerChoice() {
    let gameOptionIndex = Math.floor(Math.random() * 3);
@@ -29,6 +30,7 @@ allOptions.forEach(option => {
         displayScore();
     })
 })
+
 function refinePlayerChoice() {
     for (let i = 0; i <= 2; i++ ) {
         if (humanChoice == gameOptions[i].toLowerCase()) {
@@ -37,8 +39,13 @@ function refinePlayerChoice() {
         }
     }
 }
+
 function playRound(playerChoiceForRound, computerChoiceForRound) {
+    if (numberOfRounds > 5) {
+        return;
+    }
     let perRound = document.querySelector(".per-round");
+    let theRound = document.querySelector(".theround");
 
     if (playerChoiceForRound == computerChoiceForRound) {
         drawGame++;
@@ -58,9 +65,32 @@ function playRound(playerChoiceForRound, computerChoiceForRound) {
             perRound.style.color = "red";
         }
     }
+    numberOfRounds++;
     playerChoiceForRound = "";
     computerChoiceForRound = "";
+
+    let timeBeforeNextRound = 4;
+    const theInterval = setInterval(() => {
+        let nextRound = document.querySelector(".next-round");
+        if (timeBeforeNextRound == 0) {
+            nextRound.textContent = "";
+            perRound.textContent = "";
+            clickCount = 0;
+            if (numberOfRounds == 5) {
+                theRound.textContent = "Final Round"
+            } else {
+                if (numberOfRounds < 5) {
+                    theRound.textContent = `Round ${numberOfRounds} of 5`;
+                }
+            }
+            clearInterval(theInterval);
+        } else {
+            nextRound.textContent = `Next round begins in ${timeBeforeNextRound} seconds`;
+            timeBeforeNextRound--;
+        }
+    }, 1000);
 }
+
 function displayScore() {
     let userOutput = document.querySelector(".main-output.user");
     let computerOutput = document.querySelector(".main-output.computer");
@@ -68,6 +98,7 @@ function displayScore() {
     userOutput.textContent = playerScore;
     computerOutput.textContent = computerScore;
 }
+
 function restartGame() {
     document.querySelector(".per-round").textContent = "";
     clickCount = 0;
@@ -80,9 +111,6 @@ let restart = document.querySelector(".restart");
 restart.addEventListener("click", restartGame);
 
 function playGame() {
-    for (gameRound = 1; gameRound < 6; gameRound++) {
-        playRound(getHumanChoice(), getComputerChoice());
-    }
     let lostRound = "rounds";
     let winRound = "rounds";
 
