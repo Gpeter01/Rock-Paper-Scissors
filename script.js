@@ -26,6 +26,7 @@ allOptions.forEach(option => {
             return;
         }
         playRound(playerChoice, computerChoice);
+        displayScore();
     })
 })
 function refinePlayerChoice() {
@@ -59,6 +60,13 @@ function playRound(playerChoiceForRound, computerChoiceForRound) {
     }
     playerChoiceForRound = "";
     computerChoiceForRound = "";
+}
+function displayScore() {
+    let userOutput = document.querySelector(".main-output.user");
+    let computerOutput = document.querySelector(".main-output.computer");
+    
+    userOutput.textContent = playerScore;
+    computerOutput.textContent = computerScore;
 }
 function playGame() {
     for (gameRound = 1; gameRound < 6; gameRound++) {
