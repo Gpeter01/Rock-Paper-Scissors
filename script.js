@@ -68,6 +68,17 @@ function displayScore() {
     userOutput.textContent = playerScore;
     computerOutput.textContent = computerScore;
 }
+function restartGame() {
+    document.querySelector(".per-round").textContent = "";
+    clickCount = 0;
+    playerScore = 0;
+    computerScore = 0;
+    document.querySelector(".main-output.user").textContent = 0;
+    document.querySelector(".main-output.computer").textContent = 0;
+}
+let restart = document.querySelector(".restart");
+restart.addEventListener("click", restartGame);
+
 function playGame() {
     for (gameRound = 1; gameRound < 6; gameRound++) {
         playRound(getHumanChoice(), getComputerChoice());
