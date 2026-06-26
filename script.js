@@ -119,6 +119,7 @@ let restart = document.querySelector(".restart");
 restart.addEventListener("click", restartGame);
 
 function decideWinner() {
+    drawGame = draw;
     const winner = document.querySelector(".result");
     const additionalInfo = document.querySelector(".additional-info");
     let lostRound = "rounds";
