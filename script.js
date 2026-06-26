@@ -57,12 +57,12 @@ function playRound(playerChoiceForRound, computerChoiceForRound) {
         (playerChoiceForRound == gameOptions[1] && computerChoiceForRound == gameOptions[0]) ||
         (playerChoiceForRound == gameOptions[2] && computerChoiceForRound == gameOptions[1])) {
         playerScore++;
-        perRound.textContent = "You win!!";
+        perRound.textContent = `You win!! ${playerChoiceForRound} beats ${computerChoiceForRound}`;
         perRound.style.color = "green";
     } else {
         if (playerChoiceForRound !== computerChoiceForRound) {
             computerScore++;
-            perRound.textContent = "You lose!!";
+            perRound.textContent = `You lose!! ${computerChoiceForRound} beats ${playerChoiceForRound}`;
             perRound.style.color = "red";
         }
     }
