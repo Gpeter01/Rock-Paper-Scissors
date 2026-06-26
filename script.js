@@ -66,6 +66,7 @@ function playRound(playerChoiceForRound, computerChoiceForRound) {
             perRound.style.color = "red";
         }
     }
+    perRound.style.opacity = 100;
     numberOfRounds++;
     playerChoiceForRound = "";
     computerChoiceForRound = "";
@@ -75,8 +76,8 @@ function playRound(playerChoiceForRound, computerChoiceForRound) {
         const theInterval = setInterval(() => {
         let nextRound = document.querySelector(".next-round");
         if (timeBeforeNextRound == 0) {
-            nextRound.textContent = "";
-            perRound.textContent = "";
+            nextRound.style.opacity = 0;
+            perRound.style.opacity = 0;
             clickCount = 0;
             if (numberOfRounds == 5) {
                 theRound.textContent = "Final Round"
@@ -87,12 +88,14 @@ function playRound(playerChoiceForRound, computerChoiceForRound) {
             }
             clearInterval(theInterval);
         } else {
+            nextRound.style.opacity = 100;
             nextRound.textContent = `Next round begins in ${timeBeforeNextRound} seconds`;
             timeBeforeNextRound--;
         }
     }, 1000);
     }
     if (playerScore + computerScore + draw == 5) {
+        document.querySelector(".next-round").textContent = "";
         decideWinner();
     }
 }
@@ -108,12 +111,13 @@ function displayScore() {
 }
 
 function restartGame() {
-    document.querySelector(".per-round").textContent = "";
     clickCount = 0;
     playerScore = 0;
     computerScore = 0;
+    draw = 0;
     document.querySelector(".main-output.user").textContent = 0;
     document.querySelector(".main-output.computer").textContent = 0;
+    document.querySelector(".number-of-draws").texContent = 0;
 }
 let restart = document.querySelector(".restart");
 restart.addEventListener("click", restartGame);
