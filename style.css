@@ -50,7 +50,9 @@ h2 {
 }
 .containscore {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     margin: 2rem auto 0;
     gap: 1rem;
 }
@@ -66,13 +68,24 @@ h2 {
     border: 1.5px dashed white;
     border-radius: 20%;
 }
+.output-winner-of-round {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
 p.main-output {
     font-size: 1.5rem;
 }
-.result {
+.result,
+.additional-info {
     font-size: 3rem;
     text-align: center;
-    color: green;
+    color: white;
+}
+.additional-info {
+    font-size: 2rem;
 }
 .restart {
     display: block;

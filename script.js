@@ -2,7 +2,8 @@ let gameOptions = ["Rock", "Paper", "Scissors"];
 let gameRound;
 let computerScore = 0;
 let playerScore = 0;
-let drawGame = 0;
+let draw = 0;
+let drawGame = draw;
 let playerChoice;
 let computerChoice;
 let numberOfRounds = 1;
@@ -44,11 +45,11 @@ function playRound(playerChoiceForRound, computerChoiceForRound) {
     if (numberOfRounds > 5) {
         return;
     }
-    let perRound = document.querySelector(".per-round");
-    let theRound = document.querySelector(".theround");
+    const perRound = document.querySelector(".per-round");
+    const theRound = document.querySelector(".theround");
 
     if (playerChoiceForRound == computerChoiceForRound) {
-        drawGame++;
+        draw++;
         perRound.textContent = "It's a draw";
         perRound.style.color = "white";
     }
@@ -70,7 +71,8 @@ function playRound(playerChoiceForRound, computerChoiceForRound) {
     computerChoiceForRound = "";
 
     let timeBeforeNextRound = 4;
-    const theInterval = setInterval(() => {
+    if (numberOfRounds <= 5) {
+        const theInterval = setInterval(() => {
         let nextRound = document.querySelector(".next-round");
         if (timeBeforeNextRound == 0) {
             nextRound.textContent = "";
@@ -89,14 +91,20 @@ function playRound(playerChoiceForRound, computerChoiceForRound) {
             timeBeforeNextRound--;
         }
     }, 1000);
+    }
+    if (playerScore + computerScore + draw == 5) {
+        decideWinner();
+    }
 }
 
 function displayScore() {
-    let userOutput = document.querySelector(".main-output.user");
-    let computerOutput = document.querySelector(".main-output.computer");
+    const userOutput = document.querySelector(".main-output.user");
+    const computerOutput = document.querySelector(".main-output.computer");
+    const numberOfDraws = document.querySelector(".number-of-draws");
     
     userOutput.textContent = playerScore;
     computerOutput.textContent = computerScore;
+    numberOfDraws.textContent = draw;
 }
 
 function restartGame() {
@@ -110,7 +118,9 @@ function restartGame() {
 let restart = document.querySelector(".restart");
 restart.addEventListener("click", restartGame);
 
-function playGame() {
+function decideWinner() {
+    const winner = document.querySelector(".result");
+    const additionalInfo = document.querySelector(".additional-info");
     let lostRound = "rounds";
     let winRound = "rounds";
 
@@ -127,17 +137,19 @@ function playGame() {
         drawGame = "none";
     }
     if (playerScore == 5 && computerScore == 0) {
-        console.log("That's incredible");
+        additionalInfo.textContent = "That's incredible";
     }
     if (playerScore == computerScore) {
-        console.log(`You lost ${computerScore} ${lostRound}, won ${playerScore} and  also drew ${drawGame}`);
-        console.log("What a clutch, it's a draw.");
+       additionalInfo.textContent = `You lost ${computerScore} ${lostRound}, won ${playerScore} and  also drew ${drawGame}`;
+        winner.textContent = "What a clutch, it's a draw.";
+        winner.style.color = "white";
     } else if (playerScore > computerScore) {
-        console.log(`You won ${playerScore} ${winRound}, lost ${computerScore} ${lostRound} and drew ${drawGame}`);
-        console.log("Congratulations, you win!!🎉🎉");
+       additionalInfo.textContent = `You won ${playerScore} ${winRound}, lost ${computerScore} ${lostRound} and drew ${drawGame}`;
+        winner.textContent = "Congratulations, you win!!🎉🎉";
+        winner.style.color = "green";
     } else if (playerScore < computerScore) {
-        console.log(`You lost ${computerScore} ${lostRound}, won ${playerScore} ${winRound} and drew ${drawGame}`);
-        console.log("Haha, you lost");
+        additionalInfo.textContent = `You lost ${computerScore} ${lostRound}, won ${playerScore} ${winRound} and drew ${drawGame}`;
+        winner.textContent = "Haha, you lost";
+        winner.style.color = "red";
     }
 }
-playGame();
