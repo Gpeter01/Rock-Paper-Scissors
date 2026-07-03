@@ -50,7 +50,7 @@ h2 {
 .per-round {
     margin: 2rem auto 0;
     padding: 1rem;
-    font-size: 2.3rem;
+    font-size: 2.15rem;
     color: red;
     text-align: center;
     transition: opacity 1s ease;
@@ -92,7 +92,7 @@ p.main-output {
 }
 .result,
 .additional-info {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     text-align: center;
     margin: 1rem auto 1rem;
     padding-inline: 1rem;
@@ -149,14 +149,17 @@ p.main-output {
     }
     .output {
         padding: 0.5rem;
-        width: 20vw;
-        height: 20vw;
+        width: 22vw;
+        height: 22vw;
     }
     p.main-output {
         font-size: 8cqi;
     }
     .restart {
-        width: 22vw;
-        height: 11vw;
+        width: 24vw;
+        height: 12vw;
+    }
+    .per-round {
+        margin-top: 1rem;
     }
 }
