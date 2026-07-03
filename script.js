@@ -71,7 +71,7 @@ function playRound(playerChoiceForRound, computerChoiceForRound) {
     playerChoiceForRound = "";
     computerChoiceForRound = "";
 
-    let timeBeforeNextRound = 4;
+    let timeBeforeNextRound = 3;
     if (numberOfRounds <= 5) {
         const theInterval = setInterval(() => {
         let nextRound = document.querySelector(".next-round");
@@ -111,13 +111,7 @@ function displayScore() {
 }
 
 function restartGame() {
-    clickCount = 0;
-    playerScore = 0;
-    computerScore = 0;
-    draw = 0;
-    document.querySelector(".main-output.user").textContent = 0;
-    document.querySelector(".main-output.computer").textContent = 0;
-    document.querySelector(".number-of-draws").texContent = 0;
+   location.reload();
 }
 let restart = document.querySelector(".restart");
 restart.addEventListener("click", restartGame);
