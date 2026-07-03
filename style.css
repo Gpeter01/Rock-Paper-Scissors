@@ -2,18 +2,22 @@
     box-sizing: border-box;
     color: white;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
 }
 body {
     background-image: linear-gradient(to right, purple, blue);
 }
 h1 {
     margin: 1.5rem auto 1rem;
+    padding-inline: 1rem;
     text-align: center;
     font-size: 3.5rem;
 }
 h1::after {
     display: block;
-    margin:  5px auto 0px;
+    margin:  7.5px auto 0px;
     border-radius: 50%;
     content: "";
     width: 70vw;
@@ -23,6 +27,7 @@ h1::after {
 h2 {
     text-align: center;
     margin: 1.7rem auto 0;
+    padding-inline: 1rem;
     font-size: 2.7rem;
 }
 .container-option {
@@ -32,9 +37,10 @@ h2 {
     align-items: center;
     margin: 1.7rem auto 0;
     gap: 3rem;
+    container: container-main-option / inline-size;
 }
 .option {
-    display: block;
+    display: inline-block;
     border-radius: 30%;
     font-size: 2rem;
     width: 15vw;
@@ -43,6 +49,7 @@ h2 {
 }
 .per-round {
     margin: 2rem auto 0;
+    padding: 1rem;
     font-size: 2.3rem;
     color: red;
     text-align: center;
@@ -52,18 +59,18 @@ h2 {
 .containscore {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     margin: 1rem auto 0;
     gap: 1rem;
+    container: container-main-score / inline-size;
 }
 .output {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    gap: 1rem;
-    padding: 10px;
+    gap: 0.5rem;
+    padding: 0.5rem;
     width: 10vw;
     height: 10vw;
     border: 1.5px dashed white;
@@ -73,8 +80,12 @@ h2 {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
     gap: 1rem;
+}
+.user-display,
+.main-output {
+    display: inline-block;
+    margin: 0;
 }
 p.main-output {
     font-size: 1.5rem;
@@ -84,13 +95,19 @@ p.main-output {
     font-size: 2.5rem;
     text-align: center;
     margin: 1rem auto 1rem;
+    padding-inline: 1rem;
     font-weight: 600;
 }
 .additional-info {
     font-size: 2rem;
 }
+.container-restart {
+    display: flex;
+    justify-content: center;
+    container: restart-game / inline-size;
+}
 .restart {
-    display: block;
+    display: inline-block;
     font-size: 1.2rem;
     border-radius: 20%;
     width: 15vw;
@@ -104,4 +121,42 @@ p.main-output {
     margin: 2rem auto 1rem;
     transition: opacity 1200ms ease;
     opacity: 0;
+}
+@container container-main-option (inline-size <= 930px) {
+    .option {
+        font-size: 4cqi;
+    }
+}
+@container container-main-score (inline-size <= 900px) {
+    .user-display,
+    .computer-display,
+    .draw {
+        font-size: 3.5cqi;
+    }
+}
+@container restart-game (inline-size <= 880px) {
+    .restart {
+        font-size: 3cqi;
+    }
+}
+@media (width <= 950px) {
+    .option {
+        width: 23vw;
+        height: 23vw;
+    }
+    .container-option {
+        gap: 2rem;
+    }
+    .output {
+        padding: 0.5rem;
+        width: 20vw;
+        height: 20vw;
+    }
+    p.main-output {
+        font-size: 8cqi;
+    }
+    .restart {
+        width: 22vw;
+        height: 11vw;
+    }
 }
