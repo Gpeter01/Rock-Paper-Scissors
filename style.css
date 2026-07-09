@@ -46,6 +46,11 @@ h2 {
     width: 15vw;
     height: 15vw;
     background-color: blue;
+    transition: transform 500ms ease;
+}
+.option:hover,
+.option:focus {
+    transform: scale(110%);
 }
 .per-round {
     margin: 2rem auto 0;
