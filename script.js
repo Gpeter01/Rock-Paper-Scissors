@@ -1,3 +1,5 @@
+"use strict"
+
 let gameOptions = ["Rock", "Paper", "Scissors"];
 let gameRound;
 let computerScore = 0;
