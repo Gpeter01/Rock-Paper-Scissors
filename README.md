@@ -32,7 +32,7 @@ The game is widely used as a quick decision-making tool and is known for its sim
 
 ---
 
-## ⚙️ How It Works (Program Logic)
+## How It Works (Program Logic)
 
 This project simulates the game between a user and a computer:
 
@@ -70,7 +70,7 @@ It’s also used in:
 
 ---
 
-## 📚 What I Learned (Beginner Reflection)
+## What I Learned (Beginner Reflection)
 
 While building this project, I learned:
 
@@ -79,23 +79,27 @@ While building this project, I learned:
 - How to use conditional logic to control outcomes  
 - How to structure a simple program  
 - How to handle edge cases like draws  
-- The importance of clean and readable code  
+- The importance of clean and readable code (I am still working on this a bit lol)  
 
-This project helped me understand how small pieces of logic come together to create a complete, interactive program.
+This project helped me understand how small pieces of logic come together to create a complete, interactive program. I really got an in depth understanding of breaking down my code and making use of functions ideally.
 
 ---
+
+
+## Improvements I have maade
+
+- Addition of a graphical user interface (GUI)
 
 ## Future Improvements
 
 Some ideas to improve this project:
 
-- Add a graphical user interface (GUI)
+- ~~Add a graphical user interface (GUI)~~
 - Keep score across multiple rounds
 - Add sound effects or animations
 - Implement multiplayer mode
 
-## 🏁 Conclusion
+## Conclusion
 
-This Rock Paper Scissors project was a really insightful experience for me. It demonstrates core programming concepts in a fun and interactive way while building a solid foundation for more advanced projects.
-
+This Rock Paper Scissors project was a really insightful experience for me. It broadened my understanding of the usage of functions and manipulation of arrays, a really useful experience. Working through it helped me see things a lot better and clearer and helped set the stage floor for more advanced concepts and usage of the fundamentals.
 ---
